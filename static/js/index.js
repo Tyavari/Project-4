@@ -1,5 +1,7 @@
+// Creating "Predict" button
 var button = d3.select("#click-me");
 // d3.selectAll("#selDataset").on("change", getData);
+// Reading input data
 var data = new FormData();
 function handleClick() {
     console.log("A button was clicked!");
@@ -15,7 +17,7 @@ function handleClick() {
     data.append("units", document.getElementById("selDataset3").value)
     data.append("sqft", document.getElementById("selDataset4").value)
     data.append("year", document.getElementById("selDataset5").value)
-    console.log(data)
+    console.log(data.get("neighborhood"))
 }
 button.on("click", handleClick);
-
+// call route from flask, send input data, run model thru python, return output, flask will then return output (summary.html) 
