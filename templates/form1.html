@@ -27,7 +27,7 @@
             <div class="jumbotron" style="text-align: center">
                 <h1>Real Estate Price Predictor</h1>
                 <p>Choose your property's details below</p>
-                <button onclick="handleClick()">Predict!</button>
+                <button onclick="handleClick()">Predict Price!</button>
                
             </div>
             <div class="giphy-me"></div>
@@ -387,7 +387,6 @@
                   <option value="10462">10462</option>
                   <option value="10461">10461</option>
                   <option value="10454">10454</option>
-                  <option value="0">0</option>
                   <option value="10470">10470</option>
                   <option value="11228">11228</option>
                   <option value="11214">11214</option>
@@ -1663,7 +1662,304 @@
 
 </div>
         </div>
- 
+        <form method="POST" action="/send" role="form", name="dataform">
+          <div class="form-group">
+            <div class="giphy-me"></div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                  <div class="well">
+              <label for="neighborhood">Neigborhood</label>
+              <select class="form-control" id="neighborhood" name="neighborhood">
+                <!-- Python code that was used to make the following html code can be found in 
+                'loop to create code for dropdown options.ipynb' -->
+                <option value="ALPHABET CITY">ALPHABET CITY</option>
+                <option value="CHELSEA">CHELSEA</option>
+                <option value="CHINATOWN">CHINATOWN</option>
+                <option value="CIVIC CENTER">CIVIC CENTER</option>
+                <option value="CLINTON">CLINTON</option>
+                <option value="EAST VILLAGE">EAST VILLAGE</option>
+                <option value="FASHION">FASHION</option>
+                <option value="FINANCIAL">FINANCIAL</option>
+                <option value="FLATIRON">FLATIRON</option>
+                <option value="GRAMERCY">GRAMERCY</option>
+                <option value="GREENWICH VILLAGE-CENTRAL">GREENWICH VILLAGE-CENTRAL</option>
+                <option value="GREENWICH VILLAGE-WEST">GREENWICH VILLAGE-WEST</option>
+                <option value="HARLEM-CENTRAL">HARLEM-CENTRAL</option>
+                <option value="HARLEM-EAST">HARLEM-EAST</option>
+                <option value="HARLEM-UPPER">HARLEM-UPPER</option>
+                <option value="HARLEM-WEST">HARLEM-WEST</option>
+                <option value="INWOOD">INWOOD</option>
+                <option value="JAVITS CENTER">JAVITS CENTER</option>
+                <option value="KIPS BAY">KIPS BAY</option>
+                <option value="LITTLE ITALY">LITTLE ITALY</option>
+                <option value="LOWER EAST SIDE">LOWER EAST SIDE</option>
+                <option value="MANHATTAN VALLEY">MANHATTAN VALLEY</option>
+                <option value="MIDTOWN EAST">MIDTOWN EAST</option>
+                <option value="MIDTOWN WEST">MIDTOWN WEST</option>
+                <option value="MURRAY HILL">MURRAY HILL</option>
+                <option value="ROOSEVELT ISLAND">ROOSEVELT ISLAND</option>
+                <option value="SOHO">SOHO</option>
+                <option value="SOUTHBRIDGE">SOUTHBRIDGE</option>
+                <option value="TRIBECA">TRIBECA</option>
+                <option value="UPPER EAST SIDE (59-79)">UPPER EAST SIDE (59-79)</option>
+                <option value="UPPER EAST SIDE (79-96)">UPPER EAST SIDE (79-96)</option>
+                <option value="UPPER EAST SIDE (96-110)">UPPER EAST SIDE (96-110)</option>
+                <option value="UPPER WEST SIDE (59-79)">UPPER WEST SIDE (59-79)</option>
+                <option value="UPPER WEST SIDE (79-96)">UPPER WEST SIDE (79-96)</option>
+                <option value="UPPER WEST SIDE (96-116)">UPPER WEST SIDE (96-116)</option>
+                <option value="WASHINGTON HEIGHTS LOWER">WASHINGTON HEIGHTS LOWER</option>
+                <option value="WASHINGTON HEIGHTS UPPER">WASHINGTON HEIGHTS UPPER</option>
+                <option value="BATHGATE">BATHGATE</option>
+                <option value="BAYCHESTER">BAYCHESTER</option>
+                <option value="BEDFORD PARK/NORWOOD">BEDFORD PARK/NORWOOD</option>
+                <option value="BELMONT">BELMONT</option>
+                <option value="BRONX PARK">BRONX PARK</option>
+                <option value="BRONXDALE">BRONXDALE</option>
+                <option value="CASTLE HILL/UNIONPORT">CASTLE HILL/UNIONPORT</option>
+                <option value="CITY ISLAND">CITY ISLAND</option>
+                <option value="CITY ISLAND-PELHAM STRIP">CITY ISLAND-PELHAM STRIP</option>
+                <option value="CO-OP CITY">CO-OP CITY</option>
+                <option value="COUNTRY CLUB">COUNTRY CLUB</option>
+                <option value="CROTONA PARK">CROTONA PARK</option>
+                <option value="EAST TREMONT">EAST TREMONT</option>
+                <option value="FIELDSTON">FIELDSTON</option>
+                <option value="FORDHAM">FORDHAM</option>
+                <option value="HIGHBRIDGE/MORRIS HEIGHTS">HIGHBRIDGE/MORRIS HEIGHTS</option>
+                <option value="HUNTS POINT">HUNTS POINT</option>
+                <option value="KINGSBRIDGE HTS/UNIV HTS">KINGSBRIDGE HTS/UNIV HTS</option>
+                <option value="KINGSBRIDGE/JEROME PARK">KINGSBRIDGE/JEROME PARK</option>
+                <option value="MELROSE/CONCOURSE">MELROSE/CONCOURSE</option>
+                <option value="MORRIS PARK/VAN NEST">MORRIS PARK/VAN NEST</option>
+                <option value="MORRISANIA/LONGWOOD">MORRISANIA/LONGWOOD</option>
+                <option value="MOTT HAVEN/PORT MORRIS">MOTT HAVEN/PORT MORRIS</option>
+                <option value="MOUNT HOPE/MOUNT EDEN">MOUNT HOPE/MOUNT EDEN</option>
+                <option value="PARKCHESTER">PARKCHESTER</option>
+                <option value="PELHAM GARDENS">PELHAM GARDENS</option>
+                <option value="PELHAM PARKWAY NORTH">PELHAM PARKWAY NORTH</option>
+                <option value="PELHAM PARKWAY SOUTH">PELHAM PARKWAY SOUTH</option>
+                <option value="RIVERDALE">RIVERDALE</option>
+                <option value="SCHUYLERVILLE/PELHAM BAY">SCHUYLERVILLE/PELHAM BAY</option>
+                <option value="SOUNDVIEW">SOUNDVIEW</option>
+                <option value="THROGS NECK">THROGS NECK</option>
+                <option value="VAN CORTLANDT PARK">VAN CORTLANDT PARK</option>
+                <option value="WAKEFIELD">WAKEFIELD</option>
+                <option value="WESTCHESTER">WESTCHESTER</option>
+                <option value="WILLIAMSBRIDGE">WILLIAMSBRIDGE</option>
+                <option value="WOODLAWN">WOODLAWN</option>
+                <option value="BATH BEACH">BATH BEACH</option>
+                <option value="BAY RIDGE">BAY RIDGE</option>
+                <option value="BEDFORD STUYVESANT">BEDFORD STUYVESANT</option>
+                <option value="BENSONHURST">BENSONHURST</option>
+                <option value="BERGEN BEACH">BERGEN BEACH</option>
+                <option value="BOERUM HILL">BOERUM HILL</option>
+                <option value="BOROUGH PARK">BOROUGH PARK</option>
+                <option value="BRIGHTON BEACH">BRIGHTON BEACH</option>
+                <option value="BROOKLYN HEIGHTS">BROOKLYN HEIGHTS</option>
+                <option value="BROWNSVILLE">BROWNSVILLE</option>
+                <option value="BUSH TERMINAL">BUSH TERMINAL</option>
+                <option value="BUSHWICK">BUSHWICK</option>
+                <option value="CANARSIE">CANARSIE</option>
+                <option value="CARROLL GARDENS">CARROLL GARDENS</option>
+                <option value="CLINTON HILL">CLINTON HILL</option>
+                <option value="COBBLE HILL">COBBLE HILL</option>
+                <option value="COBBLE HILL-WEST">COBBLE HILL-WEST</option>
+                <option value="CONEY ISLAND">CONEY ISLAND</option>
+                <option value="CROWN HEIGHTS">CROWN HEIGHTS</option>
+                <option value="CYPRESS HILLS">CYPRESS HILLS</option>
+                <option value="DOWNTOWN-FULTON FERRY">DOWNTOWN-FULTON FERRY</option>
+                <option value="DOWNTOWN-FULTON MALL">DOWNTOWN-FULTON MALL</option>
+                <option value="DOWNTOWN-METROTECH">DOWNTOWN-METROTECH</option>
+                <option value="DYKER HEIGHTS">DYKER HEIGHTS</option>
+                <option value="EAST NEW YORK">EAST NEW YORK</option>
+                <option value="FLATBUSH-CENTRAL">FLATBUSH-CENTRAL</option>
+                <option value="FLATBUSH-EAST">FLATBUSH-EAST</option>
+                <option value="FLATBUSH-LEFFERTS GARDEN">FLATBUSH-LEFFERTS GARDEN</option>
+                <option value="FLATBUSH-NORTH">FLATBUSH-NORTH</option>
+                <option value="FLATLANDS">FLATLANDS</option>
+                <option value="FORT GREENE">FORT GREENE</option>
+                <option value="GERRITSEN BEACH">GERRITSEN BEACH</option>
+                <option value="GOWANUS">GOWANUS</option>
+                <option value="GRAVESEND">GRAVESEND</option>
+                <option value="GREENPOINT">GREENPOINT</option>
+                <option value="KENSINGTON">KENSINGTON</option>
+                <option value="MADISON">MADISON</option>
+                <option value="MANHATTAN BEACH">MANHATTAN BEACH</option>
+                <option value="MARINE PARK">MARINE PARK</option>
+                <option value="MIDWOOD">MIDWOOD</option>
+                <option value="MILL BASIN">MILL BASIN</option>
+                <option value="NAVY YARD">NAVY YARD</option>
+                <option value="OCEAN HILL">OCEAN HILL</option>
+                <option value="OCEAN PARKWAY-NORTH">OCEAN PARKWAY-NORTH</option>
+                <option value="OCEAN PARKWAY-SOUTH">OCEAN PARKWAY-SOUTH</option>
+                <option value="OLD MILL BASIN">OLD MILL BASIN</option>
+                <option value="PARK SLOPE">PARK SLOPE</option>
+                <option value="PARK SLOPE SOUTH">PARK SLOPE SOUTH</option>
+                <option value="PROSPECT HEIGHTS">PROSPECT HEIGHTS</option>
+                <option value="RED HOOK">RED HOOK</option>
+                <option value="SEAGATE">SEAGATE</option>
+                <option value="SHEEPSHEAD BAY">SHEEPSHEAD BAY</option>
+                <option value="SPRING CREEK">SPRING CREEK</option>
+                <option value="SUNSET PARK">SUNSET PARK</option>
+                <option value="WILLIAMSBURG-CENTRAL">WILLIAMSBURG-CENTRAL</option>
+                <option value="WILLIAMSBURG-EAST">WILLIAMSBURG-EAST</option>
+                <option value="WILLIAMSBURG-NORTH">WILLIAMSBURG-NORTH</option>
+                <option value="WILLIAMSBURG-SOUTH">WILLIAMSBURG-SOUTH</option>
+                <option value="WINDSOR TERRACE">WINDSOR TERRACE</option>
+                <option value="WYCKOFF HEIGHTS">WYCKOFF HEIGHTS</option>
+                <option value="AIRPORT LA GUARDIA">AIRPORT LA GUARDIA</option>
+                <option value="ARVERNE">ARVERNE</option>
+                <option value="ASTORIA">ASTORIA</option>
+                <option value="BAYSIDE">BAYSIDE</option>
+                <option value="BEECHHURST">BEECHHURST</option>
+                <option value="BELLE HARBOR">BELLE HARBOR</option>
+                <option value="BELLEROSE">BELLEROSE</option>
+                <option value="BRIARWOOD">BRIARWOOD</option>
+                <option value="BROAD CHANNEL">BROAD CHANNEL</option>
+                <option value="CAMBRIA HEIGHTS">CAMBRIA HEIGHTS</option>
+                <option value="COLLEGE POINT">COLLEGE POINT</option>
+                <option value="CORONA">CORONA</option>
+                <option value="DOUGLASTON">DOUGLASTON</option>
+                <option value="EAST ELMHURST">EAST ELMHURST</option>
+                <option value="ELMHURST">ELMHURST</option>
+                <option value="FAR ROCKAWAY">FAR ROCKAWAY</option>
+                <option value="FLORAL PARK">FLORAL PARK</option>
+                <option value="FLUSHING-NORTH">FLUSHING-NORTH</option>
+                <option value="FLUSHING-SOUTH">FLUSHING-SOUTH</option>
+                <option value="FOREST HILLS">FOREST HILLS</option>
+                <option value="FRESH MEADOWS">FRESH MEADOWS</option>
+                <option value="GLEN OAKS">GLEN OAKS</option>
+                <option value="GLENDALE">GLENDALE</option>
+                <option value="HAMMELS">HAMMELS</option>
+                <option value="HILLCREST">HILLCREST</option>
+                <option value="HOLLIS">HOLLIS</option>
+                <option value="HOLLIS HILLS">HOLLIS HILLS</option>
+                <option value="HOLLISWOOD">HOLLISWOOD</option>
+                <option value="HOWARD BEACH">HOWARD BEACH</option>
+                <option value="JACKSON HEIGHTS">JACKSON HEIGHTS</option>
+                <option value="JAMAICA">JAMAICA</option>
+                <option value="JAMAICA BAY">JAMAICA BAY</option>
+                <option value="JAMAICA ESTATES">JAMAICA ESTATES</option>
+                <option value="JAMAICA HILLS">JAMAICA HILLS</option>
+                <option value="KEW GARDENS">KEW GARDENS</option>
+                <option value="LAURELTON">LAURELTON</option>
+                <option value="LITTLE NECK">LITTLE NECK</option>
+                <option value="LONG ISLAND CITY">LONG ISLAND CITY</option>
+                <option value="MASPETH">MASPETH</option>
+                <option value="MIDDLE VILLAGE">MIDDLE VILLAGE</option>
+                <option value="NEPONSIT">NEPONSIT</option>
+                <option value="OAKLAND GARDENS">OAKLAND GARDENS</option>
+                <option value="OZONE PARK">OZONE PARK</option>
+                <option value="QUEENS VILLAGE">QUEENS VILLAGE</option>
+                <option value="REGO PARK">REGO PARK</option>
+                <option value="RICHMOND HILL">RICHMOND HILL</option>
+                <option value="RIDGEWOOD">RIDGEWOOD</option>
+                <option value="ROCKAWAY PARK">ROCKAWAY PARK</option>
+                <option value="ROSEDALE">ROSEDALE</option>
+                <option value="SO. JAMAICA-BAISLEY PARK">SO. JAMAICA-BAISLEY PARK</option>
+                <option value="SOUTH JAMAICA">SOUTH JAMAICA</option>
+                <option value="SOUTH OZONE PARK">SOUTH OZONE PARK</option>
+                <option value="SPRINGFIELD GARDENS">SPRINGFIELD GARDENS</option>
+                <option value="ST. ALBANS">ST. ALBANS</option>
+                <option value="SUNNYSIDE">SUNNYSIDE</option>
+                <option value="WHITESTONE">WHITESTONE</option>
+                <option value="WOODHAVEN">WOODHAVEN</option>
+                <option value="WOODSIDE">WOODSIDE</option>
+                <option value="ANNADALE">ANNADALE</option>
+                <option value="ARDEN HEIGHTS">ARDEN HEIGHTS</option>
+                <option value="ARROCHAR">ARROCHAR</option>
+                <option value="ARROCHAR-SHORE ACRES">ARROCHAR-SHORE ACRES</option>
+                <option value="BULLS HEAD">BULLS HEAD</option>
+                <option value="CASTLETON CORNERS">CASTLETON CORNERS</option>
+                <option value="CLOVE LAKES">CLOVE LAKES</option>
+                <option value="CONCORD">CONCORD</option>
+                <option value="CONCORD-FOX HILLS">CONCORD-FOX HILLS</option>
+                <option value="DONGAN HILLS">DONGAN HILLS</option>
+                <option value="DONGAN HILLS-COLONY">DONGAN HILLS-COLONY</option>
+                <option value="DONGAN HILLS-OLD TOWN">DONGAN HILLS-OLD TOWN</option>
+                <option value="ELTINGVILLE">ELTINGVILLE</option>
+                <option value="EMERSON HILL">EMERSON HILL</option>
+                <option value="FRESH KILLS">FRESH KILLS</option>
+                <option value="GRANT CITY">GRANT CITY</option>
+                <option value="GRASMERE">GRASMERE</option>
+                <option value="GREAT KILLS">GREAT KILLS</option>
+                <option value="GREAT KILLS-BAY TERRACE">GREAT KILLS-BAY TERRACE</option>
+                <option value="GRYMES HILL">GRYMES HILL</option>
+                <option value="HUGUENOT">HUGUENOT</option>
+                <option value="LIVINGSTON">LIVINGSTON</option>
+                <option value="MANOR HEIGHTS">MANOR HEIGHTS</option>
+                <option value="MARINERS HARBOR">MARINERS HARBOR</option>
+                <option value="MIDLAND BEACH">MIDLAND BEACH</option>
+                <option value="NEW BRIGHTON">NEW BRIGHTON</option>
+                <option value="NEW BRIGHTON-ST. GEORGE">NEW BRIGHTON-ST. GEORGE</option>
+                <option value="NEW DORP">NEW DORP</option>
+                <option value="NEW DORP-BEACH">NEW DORP-BEACH</option>
+                <option value="NEW DORP-HEIGHTS">NEW DORP-HEIGHTS</option>
+                <option value="NEW SPRINGVILLE">NEW SPRINGVILLE</option>
+                <option value="OAKWOOD">OAKWOOD</option>
+                <option value="OAKWOOD-BEACH">OAKWOOD-BEACH</option>
+                <option value="PLEASANT PLAINS">PLEASANT PLAINS</option>
+                <option value="PORT IVORY">PORT IVORY</option>
+                <option value="PORT RICHMOND">PORT RICHMOND</option>
+                <option value="PRINCES BAY">PRINCES BAY</option>
+                <option value="RICHMONDTOWN">RICHMONDTOWN</option>
+                <option value="RICHMONDTOWN-LIGHTHS HILL">RICHMONDTOWN-LIGHTHS HILL</option>
+                <option value="ROSEBANK">ROSEBANK</option>
+                <option value="ROSSVILLE">ROSSVILLE</option>
+                <option value="ROSSVILLE-CHARLESTON">ROSSVILLE-CHARLESTON</option>
+                <option value="ROSSVILLE-RICHMOND VALLEY">ROSSVILLE-RICHMOND VALLEY</option>
+                <option value="SILVER LAKE">SILVER LAKE</option>
+                <option value="SOUTH BEACH">SOUTH BEACH</option>
+                <option value="STAPLETON">STAPLETON</option>
+                <option value="STAPLETON-CLIFTON">STAPLETON-CLIFTON</option>
+                <option value="TODT HILL">TODT HILL</option>
+                <option value="TOMPKINSVILLE">TOMPKINSVILLE</option>
+                <option value="TOTTENVILLE">TOTTENVILLE</option>
+                <option value="TRAVIS">TRAVIS</option>
+                <option value="WEST NEW BRIGHTON">WEST NEW BRIGHTON</option>
+                <option value="WESTERLEIGH">WESTERLEIGH</option>
+                <option value="WILLOWBROOK">WILLOWBROOK</option>
+                <option value="WOODROW">WOODROW</option>
+              </select>
+          </div>
+         
+            
+              
+                <!-- <div class="form-group">
+                  <div class="giphy-me"></div>
+                  <div class="row"></div>
+                  <div class="col-md-offset-2 col-md-8"></div>
+                  <div class="well">
+              <label for="buildingType">Building Type</label>
+              <select class="form-control" id="BuildingType">
+
+                        <option value="07 RENTALS - WALKUP APARTMENTS             ">07 RENTALS - WALKUP APARTMENTS             </option>
+                        <option value="08 RENTALS - ELEVATOR APARTMENTS           ">08 RENTALS - ELEVATOR APARTMENTS           </option>
+                        <option value="09 COOPS - WALKUP APARTMENTS               ">09 COOPS - WALKUP APARTMENTS               </option>
+                        <option value="11A CONDO-RENTALS                           ">11A CONDO-RENTALS                           </option>
+                        <option value="14 RENTALS - 4-10 UNIT                     ">14 RENTALS - 4-10 UNIT                     </option>
+                        <option value="01 ONE FAMILY DWELLINGS                    ">01 ONE FAMILY DWELLINGS                    </option>
+                        <option value="02 TWO FAMILY DWELLINGS                    ">02 TWO FAMILY DWELLINGS                    </option>
+                        <option value="03 THREE FAMILY DWELLINGS                  ">03 THREE FAMILY DWELLINGS                  </option>
+                        <option value="17 CONDO COOPS                             ">17 CONDO COOPS                             </option>
+                        <option value="10 COOPS - ELEVATOR APARTMENTS             ">10 COOPS - ELEVATOR APARTMENTS             </option>
+                        <option value="12 CONDOS - WALKUP APARTMENTS              ">12 CONDOS - WALKUP APARTMENTS              </option>
+                        <option value="13 CONDOS - ELEVATOR APARTMENTS            ">13 CONDOS - ELEVATOR APARTMENTS            </option>
+                        <option value="46 CONDO STORE BUILDINGS                   ">46 CONDO STORE BUILDINGS                   </option>
+                        <option value="15 CONDOS - 2-10 UNIT RESIDENTIAL          ">15 CONDOS - 2-10 UNIT RESIDENTIAL          </option>
+                        <option value="16 CONDOS - 2-10 UNIT WITH COMMERCIAL UNIT ">16 CONDOS - 2-10 UNIT WITH COMMERCIAL UNIT </option>               </option>
+                      </select>
+                    </div>
+  
+                </div>
+                  
+            </div> -->
+          </div>
+          <!-- <div class="form-group">
+              <label for="inputLon">Pet Location Lon</label>
+              <input type="text" class="form-control" id="inputLon" name="petLon" placeholder="Lon">
+          </div> -->
+          <input type="submit" value="Predict Price!" class="btn btn-default">
+      </form>
     </body>
     
 </html>
