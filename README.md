@@ -19,5 +19,5 @@ Various version of RandomForest are used as well, including some with extra tree
 Ultimately, the best performing model was a Random Forest with 100 estimators, using unscaled data, with a 25.8% accuracy score. This is the version of the model used in our deployment. 
 This notebook also includes some Python code needed for formatting of data and HTML code for our Flask app.
 
-App.py is the Flask server app. This allows us to deploy the app locally. It imports the Random Forest model, and uses HTML and JavaScript/Bootstrap to read in user input and get a model prediction of sales price. 
+App.py is the Flask server app. This allows us to deploy the app locally. It imports the Random Forest model, and uses HTML and JavaScript/Bootstrap to read in user input (form2.html) and get a model prediction of sales price (summary.html). 
 
