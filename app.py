@@ -73,14 +73,15 @@ def send():
         inputdf = pd.DataFrame([dic])
 
 
-        result = model.predict(inputdf)  
-        tohtml = [dic, result]
-        return render_template('summary.html', info=tohtml)
+        result = (model.predict(inputdf))[0]  
+        #tohtml = [dic, result]
+        #tohtml = {"dic": dic, "results": result}
+        #return render_template('summary.html', info=result[0])
         # End of Claudia changes
 
 
 
-    #     return (f'{neighborhood} {building_type} {zip1} {units} {sqft} {year}')
+        return (f'The Price Prediction is: ${result:.2f}')
     # X_test = pd.read_csv("x_test.csv")
     # result = model.predict(X_test)  
     # return (f'{result}')

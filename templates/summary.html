@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mission to Mars</title>
+  <title>Price Prediction</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -19,15 +19,16 @@
       <h1>NYC Property Price Prediction</h1>
 
 </div>
-    {% if info%} 
-    <div class='row'>
+</div>
+    <!-- {% if info%}  -->
+    <!-- <div class='row'>
         <div class="col-md-8">
             <h1>Your Inputs:</h1>
         </div>
     </div>
     <div class='row'>
         <div class="col-md-2">
-            <h3>Neighborhood: {{info.neighborhood}}</h3>
+            <h3>Neighborhood: {{info.dic["SQFT"]}}</h3>
         </div>
         <div class="col-md-2">
             <h3> Building Type: {{info.buildingType}}</h3>
@@ -45,9 +46,12 @@
             <h3>Year Built: {{info.year}}</h3>
         </div>
 
-    </div>
+    </div> -->
    
     <div class='row'>
-        <h1>Price Prediction: {{info.result}}</h1>
-
+        <div class="col-md-2">
+        <h1>Price Prediction: {info}</h1>
+        </div>
     </div>
+</body>
+</html>
